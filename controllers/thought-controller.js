@@ -47,6 +47,7 @@ const thoughtController = {
   },
 
   
+  
   updateThought({ params, body }, res) {
     Thought.findOneAndUpdate({ _id: params.id }, body, { new: true })
       .select('-__v')
@@ -54,6 +55,7 @@ const thoughtController = {
       .catch(err => res.status(400).json(err));
   },
 
+  
   
   deleteThought({ params }, res) {
     Thought.findOneAndDelete({ _id: params.id })
